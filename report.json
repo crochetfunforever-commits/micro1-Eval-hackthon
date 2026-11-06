@@ -1,0 +1,231 @@
+{
+  "benchmark": "vigicausality-multidrug-adr-causality",
+  "version": "1.0.0",
+  "summary": {
+    "total_cases": 10,
+    "passed": 6,
+    "failed": 4,
+    "accuracy_rate": 0.6,
+    "failure_rate": 0.4,
+    "discordant_label_count": 4,
+    "unspecified_adverse_event_count": 4,
+    "lazy_unclassified_label_count": 4,
+    "who_umc_mismatch_count": 4,
+    "naranjo_category_mismatch_count": 2,
+    "multidrug_cases": 3,
+    "multidrug_cases_failed": 3,
+    "multidrug_failure_rate": 1.0
+  },
+  "by_provenance": {
+    "supplied": {
+      "cases": 4,
+      "failed": 4,
+      "failure_rate": 1.0
+    },
+    "synthetic_control": {
+      "cases": 6,
+      "failed": 0,
+      "failure_rate": 0.0
+    }
+  },
+  "failed_case_ids": [
+    "FIC-2024-1001",
+    "FIC-2024-1002",
+    "FIC-2024-1003",
+    "FIC-2024-1004"
+  ],
+  "cases": [
+    {
+      "case_id": "FIC-2024-1001",
+      "provenance": "supplied",
+      "suspect_drug": "Warfarin",
+      "concomitant_drugs": "Amiodarone; Metoprolol",
+      "failed": true,
+      "flags": [
+        "discordant_label",
+        "unspecified_adverse_event"
+      ],
+      "diagnostics": [
+        "lazy_unclassified_label",
+        "who_umc_mismatch",
+        "naranjo_category_mismatch",
+        "multidrug_regimen",
+        "multidrug_regimen_failed"
+      ],
+      "expected_causality": "Probable",
+      "predicted": {
+        "adverse_event_pt": "Unspecified Adverse Event",
+        "predicted_causality": "Conditional / Unclassified",
+        "naranjo_score": 1,
+        "naranjo_category": "Possible"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1002",
+      "provenance": "supplied",
+      "suspect_drug": "Metformin",
+      "concomitant_drugs": "Enalapril; Furosemide",
+      "failed": true,
+      "flags": [
+        "discordant_label",
+        "unspecified_adverse_event"
+      ],
+      "diagnostics": [
+        "lazy_unclassified_label",
+        "who_umc_mismatch",
+        "multidrug_regimen",
+        "multidrug_regimen_failed"
+      ],
+      "expected_causality": "Possible",
+      "predicted": {
+        "adverse_event_pt": "Unspecified Adverse Event",
+        "predicted_causality": "Conditional / Unclassified",
+        "naranjo_score": 1,
+        "naranjo_category": "Possible"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1003",
+      "provenance": "supplied",
+      "suspect_drug": "Amoxicillin",
+      "concomitant_drugs": "—",
+      "failed": true,
+      "flags": [
+        "discordant_label",
+        "unspecified_adverse_event"
+      ],
+      "diagnostics": [
+        "lazy_unclassified_label",
+        "who_umc_mismatch",
+        "naranjo_category_mismatch"
+      ],
+      "expected_causality": "Probable",
+      "predicted": {
+        "adverse_event_pt": "Unspecified Adverse Event",
+        "predicted_causality": "Conditional / Unclassified",
+        "naranjo_score": 1,
+        "naranjo_category": "Possible"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1004",
+      "provenance": "supplied",
+      "suspect_drug": "Sertraline",
+      "concomitant_drugs": "Aspirin",
+      "failed": true,
+      "flags": [
+        "discordant_label",
+        "unspecified_adverse_event"
+      ],
+      "diagnostics": [
+        "lazy_unclassified_label",
+        "who_umc_mismatch",
+        "multidrug_regimen",
+        "multidrug_regimen_failed"
+      ],
+      "expected_causality": "Possible",
+      "predicted": {
+        "adverse_event_pt": "Unspecified Adverse Event",
+        "predicted_causality": "Conditional / Unclassified",
+        "naranjo_score": 1,
+        "naranjo_category": "Possible"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1006",
+      "provenance": "synthetic_control",
+      "suspect_drug": "Lisinopril",
+      "concomitant_drugs": "—",
+      "failed": false,
+      "flags": [],
+      "diagnostics": [],
+      "expected_causality": "Probable",
+      "predicted": {
+        "adverse_event_pt": "Cough",
+        "predicted_causality": "Probable",
+        "naranjo_score": 6,
+        "naranjo_category": "Probable"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1007",
+      "provenance": "synthetic_control",
+      "suspect_drug": "Phenoxymethylpenicillin",
+      "concomitant_drugs": "—",
+      "failed": false,
+      "flags": [],
+      "diagnostics": [],
+      "expected_causality": "Probable",
+      "predicted": {
+        "adverse_event_pt": "Rash maculo-papular",
+        "predicted_causality": "Probable",
+        "naranjo_score": 6,
+        "naranjo_category": "Probable"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1008",
+      "provenance": "synthetic_control",
+      "suspect_drug": "Amlodipine",
+      "concomitant_drugs": "—",
+      "failed": false,
+      "flags": [],
+      "diagnostics": [],
+      "expected_causality": "Probable",
+      "predicted": {
+        "adverse_event_pt": "Peripheral oedema",
+        "predicted_causality": "Probable",
+        "naranjo_score": 5,
+        "naranjo_category": "Probable"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1009",
+      "provenance": "synthetic_control",
+      "suspect_drug": "Carbamazepine",
+      "concomitant_drugs": "—",
+      "failed": false,
+      "flags": [],
+      "diagnostics": [],
+      "expected_causality": "Possible",
+      "predicted": {
+        "adverse_event_pt": "Hyponatraemia",
+        "predicted_causality": "Possible",
+        "naranjo_score": 3,
+        "naranjo_category": "Possible"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1010",
+      "provenance": "synthetic_control",
+      "suspect_drug": "Ibuprofen",
+      "concomitant_drugs": "—",
+      "failed": false,
+      "flags": [],
+      "diagnostics": [],
+      "expected_causality": "Possible",
+      "predicted": {
+        "adverse_event_pt": "Dyspepsia",
+        "predicted_causality": "Possible",
+        "naranjo_score": 4,
+        "naranjo_category": "Possible"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1011",
+      "provenance": "synthetic_control",
+      "suspect_drug": "Metoclopramide",
+      "concomitant_drugs": "—",
+      "failed": false,
+      "flags": [],
+      "diagnostics": [],
+      "expected_causality": "Probable",
+      "predicted": {
+        "adverse_event_pt": "Dystonia",
+        "predicted_causality": "Probable",
+        "naranjo_score": 7,
+        "naranjo_category": "Probable"
+      }
+    }
+  ]
+}

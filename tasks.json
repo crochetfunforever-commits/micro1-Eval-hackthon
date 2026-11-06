@@ -1,0 +1,514 @@
+{
+  "benchmark": "vigicausality-multidrug-adr-causality",
+  "version": "1.0.0",
+  "app_url": "https://vigicausality-who-umc-naranjo-pv-causality-assess.ai.studio",
+  "tasks": [
+    {
+      "case_id": "FIC-2024-1001",
+      "clinical_profile": {
+        "report_type": "Spontaneous",
+        "country": "Germany",
+        "receive_date": "2024-03-12",
+        "report_date": "2024-03-10",
+        "patient": {
+          "initials": "AB",
+          "age": 72,
+          "sex": "Male",
+          "weight_kg": 78.5,
+          "height_cm": 172.0
+        },
+        "regimen": {
+          "suspect_drug": "Warfarin",
+          "details": "5 mg|Oral|Once daily|Atrial fibrillation|2024-01-15|2024-03-10|LOT48213|Drug withdrawn|Not performed",
+          "concomitant_drugs": "Amiodarone; Metoprolol"
+        },
+        "reactions": "Haematuria|Renal and urinary disorders|Severe|2024-03-08|2 days|Recovered ; INR increased|Investigations|Severe|2024-03-08|2 days|Recovered",
+        "severity": {
+          "is_serious": "Yes",
+          "criteria": "Hospitalisation",
+          "overall_outcome": "Recovered"
+        },
+        "ground_truth_causality": "Probable",
+        "reporter": {
+          "type": "Physician",
+          "qualification": "Health Professional"
+        },
+        "narrative_summary": "72-year-old male on stable warfarin for AF. Amiodarone started 10 days prior. Gross haematuria, INR 7.8. Warfarin held, vitamin K given. INR normalised over 48 h.",
+        "lab_data": "INR 7.8 (ref 0.8-1.2); Hb 9.1 g/dL; platelets 210x10^9/L",
+        "dechallenge_status": "Positive (INR normalised after warfarin held and vitamin K)",
+        "alternative_causes": "Excluded",
+        "causality_rationale": "Plausible temporal relationship; known interaction with amiodarone (CYP2C9 inhibition); positive dechallenge."
+      },
+      "ai_predicted_output": {
+        "adverse_event_pt": "Unspecified Adverse Event",
+        "predicted_causality": "Conditional / Unclassified",
+        "primary_criterion": "More data for proper assessment needed or additional data under examination.",
+        "naranjo_metrics": {
+          "score": 1,
+          "category": "Possible"
+        },
+        "concordance_status": "Discordant",
+        "discrepancy_notes": "WHO-UMC categorized as 'Conditional / Unclassified' due to incomplete or pending essential data. Naranjo forced a numeric score of 'Possible' based solely on default 'Unknown' values (0 points), masking critical data deficiencies.",
+        "review_status": "Pending Review",
+        "follow_up_status": "Query Pending"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1002",
+      "clinical_profile": {
+        "report_type": "Spontaneous",
+        "country": "France",
+        "receive_date": "2024-05-08",
+        "report_date": "2024-05-06",
+        "patient": {
+          "initials": "CD",
+          "age": 68,
+          "sex": "Female",
+          "weight_kg": 64.2,
+          "height_cm": 160.0
+        },
+        "regimen": {
+          "suspect_drug": "Metformin",
+          "details": "500 mg|Oral|Twice daily|Diabetes|2024-02-01|2024-05-06|LOT71345|Drug withdrawn|Not performed",
+          "concomitant_drugs": "Enalapril; Furosemide"
+        },
+        "reactions": "Lactic acidosis|Metabolism and nutrition disorders|Severe|2024-05-04|3 days|Recovering ; Acute kidney injury|Renal and urinary disorders|Severe|2024-05-04|5 days|Recovering",
+        "severity": {
+          "is_serious": "Yes",
+          "criteria": "Life-threatening",
+          "overall_outcome": "Recovering"
+        },
+        "ground_truth_causality": "Possible",
+        "reporter": {
+          "type": "Pharmacist",
+          "qualification": "Health Professional"
+        },
+        "narrative_summary": "68-year-old female on metformin, enalapril, furosemide. Vomiting and confusion; creatinine 2.9. Lactic acidosis pH 7.18, lactate 8.4. Metformin stopped; CRRT.",
+        "lab_data": "pH 7.18; lactate 8.4 mmol/L; creatinine 2.9 mg/dL (baseline 1.0); eGFR 21 mL/min/1.73m2",
+        "dechallenge_status": "Positive (lactate normalised after metformin stopped and dialysis)",
+        "alternative_causes": "Possible",
+        "causality_rationale": "Temporal relationship; known risk with renal impairment and ACE inhibitor; positive dechallenge."
+      },
+      "ai_predicted_output": {
+        "adverse_event_pt": "Unspecified Adverse Event",
+        "predicted_causality": "Conditional / Unclassified",
+        "primary_criterion": "More data for proper assessment needed or additional data under examination.",
+        "naranjo_metrics": {
+          "score": 1,
+          "category": "Possible"
+        },
+        "concordance_status": "Discordant",
+        "discrepancy_notes": "WHO-UMC categorized as 'Conditional / Unclassified' due to incomplete or pending essential data. Naranjo forced a numeric score of 'Possible' based solely on default 'Unknown' values (0 points), masking critical data deficiencies.",
+        "review_status": "Pending Review",
+        "follow_up_status": "Query Pending"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1003",
+      "clinical_profile": {
+        "report_type": "Health Professional",
+        "country": "UK",
+        "receive_date": "2024-01-22",
+        "report_date": "2024-01-20",
+        "patient": {
+          "initials": "EF",
+          "age": 45,
+          "sex": "Female",
+          "weight_kg": 59.8,
+          "height_cm": 165.0
+        },
+        "regimen": {
+          "suspect_drug": "Amoxicillin",
+          "details": "500 mg|Oral|Three times daily|Infection|2024-01-20|2024-01-20|LOT22981|Drug withdrawn|Not performed",
+          "concomitant_drugs": "—"
+        },
+        "reactions": "Anaphylaxis|Immune system disorders|Severe|2024-01-20|2 hours|Recovered ; Urticaria|Skin and subcutaneous tissue disorders|Moderate|2024-01-20|2 hours|Recovered ; Hypotension|Vascular disorders|Severe|2024-01-20|1 hour|Recovered",
+        "severity": {
+          "is_serious": "Yes",
+          "criteria": "Life-threatening",
+          "overall_outcome": "Recovered"
+        },
+        "ground_truth_causality": "Probable",
+        "reporter": {
+          "type": "Nurse",
+          "qualification": "Health Professional"
+        },
+        "narrative_summary": "45-year-old female developed urticaria, angioedema, hypotension 25 min after first amoxicillin dose. Adrenaline IM, hydrocortisone, fluids. Recovered within 2 h. Tryptase 28.",
+        "lab_data": "Tryptase 28 ug/L (ref <11.4); BP 72/40 mmHg; SpO2 88%",
+        "dechallenge_status": "Positive (symptoms resolved after drug withdrawal and adrenaline)",
+        "alternative_causes": "Excluded",
+        "causality_rationale": "Temporal relationship within 30 min of first dose; positive dechallenge; tryptase elevation supports anaphylaxis."
+      },
+      "ai_predicted_output": {
+        "adverse_event_pt": "Unspecified Adverse Event",
+        "predicted_causality": "Conditional / Unclassified",
+        "primary_criterion": "More data for proper assessment needed or additional data under examination.",
+        "naranjo_metrics": {
+          "score": 1,
+          "category": "Possible"
+        },
+        "concordance_status": "Discordant",
+        "discrepancy_notes": "WHO-UMC categorized as 'Conditional / Unclassified' due to incomplete or pending essential data. Naranjo forced a numeric score of 'Possible' based solely on default 'Unknown' values (0 points), masking critical data deficiencies.",
+        "review_status": "Pending Review",
+        "follow_up_status": "Query Pending"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1004",
+      "clinical_profile": {
+        "report_type": "Spontaneous",
+        "country": "Italy",
+        "receive_date": "2024-07-14",
+        "report_date": "2024-07-12",
+        "patient": {
+          "initials": "GH",
+          "age": 58,
+          "sex": "Male",
+          "weight_kg": 82.1,
+          "height_cm": 175.0
+        },
+        "regimen": {
+          "suspect_drug": "Sertraline",
+          "details": "100 mg|Oral|Once daily|Depression|2023-11-01|2024-07-12|LOT33872|Drug withdrawn|Not performed",
+          "concomitant_drugs": "Aspirin"
+        },
+        "reactions": "Gastrointestinal haemorrhage|Gastrointestinal disorders|Severe|2024-07-10|3 days|Recovered ; Melena|Gastrointestinal disorders|Moderate|2024-07-10|2 days|Recovered",
+        "severity": {
+          "is_serious": "Yes",
+          "criteria": "Hospitalisation",
+          "overall_outcome": "Recovered"
+        },
+        "ground_truth_causality": "Possible",
+        "reporter": {
+          "type": "Physician",
+          "qualification": "Health Professional"
+        },
+        "narrative_summary": "58-year-old male on sertraline + aspirin. Melena, Hb 8.2. Endoscopy: gastric ulcer with oozing. Both drugs stopped, PPI, 2 units RBC.",
+        "lab_data": "Hb 8.2 g/dL (ref 13-17); endoscopy: gastric ulcer with oozing",
+        "dechallenge_status": "Positive (bleeding stopped after sertraline and aspirin withdrawn)",
+        "alternative_causes": "Possible",
+        "causality_rationale": "Temporal relationship; SSRI + aspirin increase bleeding risk; positive dechallenge."
+      },
+      "ai_predicted_output": {
+        "adverse_event_pt": "Unspecified Adverse Event",
+        "predicted_causality": "Conditional / Unclassified",
+        "primary_criterion": "More data for proper assessment needed or additional data under examination.",
+        "naranjo_metrics": {
+          "score": 1,
+          "category": "Possible"
+        },
+        "concordance_status": "Discordant",
+        "discrepancy_notes": "WHO-UMC categorized as 'Conditional / Unclassified' due to incomplete or pending essential data. Naranjo forced a numeric score of 'Possible' based solely on default 'Unknown' values (0 points), masking critical data deficiencies.",
+        "review_status": "Pending Review",
+        "follow_up_status": "Query Pending"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1006",
+      "provenance": "synthetic_control",
+      "clinical_profile": {
+        "report_type": "Spontaneous",
+        "country": "Netherlands",
+        "receive_date": "2024-02-14",
+        "report_date": "2024-02-14",
+        "patient": {
+          "initials": "KL",
+          "age": 58,
+          "sex": "Female",
+          "weight_kg": 66.0,
+          "height_cm": 164.0
+        },
+        "regimen": {
+          "suspect_drug": "Lisinopril",
+          "details": "10 mg|Oral|Once daily|Hypertension|2023-11-02|2024-02-10|LOT61120|Drug withdrawn|Not performed",
+          "concomitant_drugs": "—"
+        },
+        "reactions": "Cough|Respiratory, thoracic and mediastinal disorders|Moderate|2024-01-20|3 weeks|Recovered",
+        "severity": {
+          "is_serious": "No",
+          "criteria": "Medically significant",
+          "overall_outcome": "Recovered"
+        },
+        "ground_truth_causality": "Probable",
+        "reporter": {
+          "type": "Physician",
+          "qualification": "Health Professional"
+        },
+        "narrative_summary": "58-year-old female started lisinopril for hypertension. Persistent dry cough from week 6, no chest findings, chest X-ray clear. Cough resolved within 10 days of stopping lisinopril.",
+        "lab_data": "Chest X-ray normal; SpO2 98%; eosinophils 0.2x10^9/L",
+        "dechallenge_status": "Positive (cough resolved 10 days after lisinopril stopped)",
+        "alternative_causes": "Excluded",
+        "causality_rationale": "Plausible temporal relationship; known ACE inhibitor class effect; positive dechallenge; alternatives excluded."
+      },
+      "ai_predicted_output": {
+        "adverse_event_pt": "Cough",
+        "predicted_causality": "Probable",
+        "primary_criterion": "Assessment completed against WHO-UMC criteria using the supplied temporal, dechallenge and alternative-cause data.",
+        "naranjo_metrics": {
+          "score": 6,
+          "category": "Probable"
+        },
+        "concordance_status": "Concordant",
+        "discrepancy_notes": "None.",
+        "review_status": "Reviewed",
+        "follow_up_status": "None"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1007",
+      "provenance": "synthetic_control",
+      "clinical_profile": {
+        "report_type": "Health Professional",
+        "country": "Belgium",
+        "receive_date": "2024-03-05",
+        "report_date": "2024-03-05",
+        "patient": {
+          "initials": "MN",
+          "age": 34,
+          "sex": "Male",
+          "weight_kg": 81.0,
+          "height_cm": 180.0
+        },
+        "regimen": {
+          "suspect_drug": "Phenoxymethylpenicillin",
+          "details": "500 mg|Oral|Four times daily|Tonsillitis|2024-02-26|2024-03-02|LOT90417|Drug withdrawn|Not performed",
+          "concomitant_drugs": "—"
+        },
+        "reactions": "Rash maculo-papular|Skin and subcutaneous tissue disorders|Moderate|2024-03-01|5 days|Recovered",
+        "severity": {
+          "is_serious": "No",
+          "criteria": "Medically significant",
+          "overall_outcome": "Recovered"
+        },
+        "ground_truth_causality": "Probable",
+        "reporter": {
+          "type": "Nurse",
+          "qualification": "Health Professional"
+        },
+        "narrative_summary": "34-year-old male given penicillin V for tonsillitis. Generalised maculopapular rash on day 5, no fever or mucosal involvement. Drug stopped, rash faded over 4 days with antihistamine.",
+        "lab_data": "Eosinophils 0.4x10^9/L; ALT 28 U/L; creatinine 0.9 mg/dL",
+        "dechallenge_status": "Positive (rash resolved after withdrawal)",
+        "alternative_causes": "Excluded",
+        "causality_rationale": "Typical latency for beta-lactam rash; positive dechallenge; no other new drugs."
+      },
+      "ai_predicted_output": {
+        "adverse_event_pt": "Rash maculo-papular",
+        "predicted_causality": "Probable",
+        "primary_criterion": "Assessment completed against WHO-UMC criteria using the supplied temporal, dechallenge and alternative-cause data.",
+        "naranjo_metrics": {
+          "score": 6,
+          "category": "Probable"
+        },
+        "concordance_status": "Concordant",
+        "discrepancy_notes": "None.",
+        "review_status": "Reviewed",
+        "follow_up_status": "None"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1008",
+      "provenance": "synthetic_control",
+      "clinical_profile": {
+        "report_type": "Spontaneous",
+        "country": "Portugal",
+        "receive_date": "2024-04-18",
+        "report_date": "2024-04-18",
+        "patient": {
+          "initials": "OP",
+          "age": 66,
+          "sex": "Female",
+          "weight_kg": 74.5,
+          "height_cm": 158.0
+        },
+        "regimen": {
+          "suspect_drug": "Amlodipine",
+          "details": "10 mg|Oral|Once daily|Hypertension|2024-01-08|2024-04-15|LOT37750|Dose reduced|Not performed",
+          "concomitant_drugs": "—"
+        },
+        "reactions": "Peripheral oedema|General disorders and administration site conditions|Mild|2024-02-12|8 weeks|Recovering",
+        "severity": {
+          "is_serious": "No",
+          "criteria": "Non-serious",
+          "overall_outcome": "Recovering"
+        },
+        "ground_truth_causality": "Probable",
+        "reporter": {
+          "type": "Pharmacist",
+          "qualification": "Health Professional"
+        },
+        "narrative_summary": "66-year-old female on amlodipine 10 mg developed bilateral ankle swelling after five weeks. Normal renal, hepatic and cardiac assessment. Oedema improving after dose reduction to 5 mg.",
+        "lab_data": "Creatinine 0.8 mg/dL; albumin 4.1 g/dL; NT-proBNP normal",
+        "dechallenge_status": "Positive (improving after dose reduction)",
+        "alternative_causes": "Excluded",
+        "causality_rationale": "Dose-related known effect; positive dechallenge on dose reduction; cardiac, renal and hepatic causes excluded."
+      },
+      "ai_predicted_output": {
+        "adverse_event_pt": "Peripheral oedema",
+        "predicted_causality": "Probable",
+        "primary_criterion": "Assessment completed against WHO-UMC criteria using the supplied temporal, dechallenge and alternative-cause data.",
+        "naranjo_metrics": {
+          "score": 5,
+          "category": "Probable"
+        },
+        "concordance_status": "Concordant",
+        "discrepancy_notes": "None.",
+        "review_status": "Reviewed",
+        "follow_up_status": "None"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1009",
+      "provenance": "synthetic_control",
+      "clinical_profile": {
+        "report_type": "Health Professional",
+        "country": "Austria",
+        "receive_date": "2024-05-27",
+        "report_date": "2024-05-27",
+        "patient": {
+          "initials": "QR",
+          "age": 71,
+          "sex": "Male",
+          "weight_kg": 69.0,
+          "height_cm": 170.0
+        },
+        "regimen": {
+          "suspect_drug": "Carbamazepine",
+          "details": "400 mg|Oral|Twice daily|Epilepsy|2024-03-04|2024-05-22|LOT18864|Drug withdrawn|Not performed",
+          "concomitant_drugs": "—"
+        },
+        "reactions": "Hyponatraemia|Metabolism and nutrition disorders|Moderate|2024-05-18|4 days|Recovered",
+        "severity": {
+          "is_serious": "Yes",
+          "criteria": "Hospitalisation",
+          "overall_outcome": "Recovered"
+        },
+        "ground_truth_causality": "Possible",
+        "reporter": {
+          "type": "Physician",
+          "qualification": "Health Professional"
+        },
+        "narrative_summary": "71-year-old male on carbamazepine for epilepsy admitted with confusion. Sodium 121 mmol/L. Carbamazepine switched to levetiracetam and sodium normalised over a week. Mild reduced oral intake also noted.",
+        "lab_data": "Sodium 121 mmol/L (ref 135-145); serum osmolality 258 mosm/kg; urine sodium 48 mmol/L",
+        "dechallenge_status": "Positive (sodium normalised after switch)",
+        "alternative_causes": "Possible",
+        "causality_rationale": "Known carbamazepine effect with positive dechallenge; reduced oral intake is a competing contributor."
+      },
+      "ai_predicted_output": {
+        "adverse_event_pt": "Hyponatraemia",
+        "predicted_causality": "Possible",
+        "primary_criterion": "Assessment completed against WHO-UMC criteria using the supplied temporal, dechallenge and alternative-cause data.",
+        "naranjo_metrics": {
+          "score": 3,
+          "category": "Possible"
+        },
+        "concordance_status": "Concordant",
+        "discrepancy_notes": "None.",
+        "review_status": "Reviewed",
+        "follow_up_status": "None"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1010",
+      "provenance": "synthetic_control",
+      "clinical_profile": {
+        "report_type": "Spontaneous",
+        "country": "Ireland",
+        "receive_date": "2024-06-11",
+        "report_date": "2024-06-11",
+        "patient": {
+          "initials": "ST",
+          "age": 36,
+          "sex": "Male",
+          "weight_kg": 77.0,
+          "height_cm": 177.0
+        },
+        "regimen": {
+          "suspect_drug": "Ibuprofen",
+          "details": "400 mg|Oral|Three times daily|Back pain|2024-06-01|2024-06-09|LOT52209|Drug withdrawn|Not performed",
+          "concomitant_drugs": "—"
+        },
+        "reactions": "Dyspepsia|Gastrointestinal disorders|Mild|2024-06-05|4 days|Recovered",
+        "severity": {
+          "is_serious": "No",
+          "criteria": "Non-serious",
+          "overall_outcome": "Recovered"
+        },
+        "ground_truth_causality": "Possible",
+        "reporter": {
+          "type": "Consumer",
+          "qualification": "Non-Health Professional"
+        },
+        "narrative_summary": "36-year-old male with mild epigastric discomfort four days into ibuprofen for back pain. No bleeding or alarm features. Symptoms settled after stopping; he also reported heavy coffee intake that week.",
+        "lab_data": "Hb 13.9 g/dL; creatinine 0.9 mg/dL",
+        "dechallenge_status": "Positive (symptoms settled after stopping)",
+        "alternative_causes": "Possible",
+        "causality_rationale": "Plausible NSAID effect with positive dechallenge; heavy coffee intake is a confounder."
+      },
+      "ai_predicted_output": {
+        "adverse_event_pt": "Dyspepsia",
+        "predicted_causality": "Possible",
+        "primary_criterion": "Assessment completed against WHO-UMC criteria using the supplied temporal, dechallenge and alternative-cause data.",
+        "naranjo_metrics": {
+          "score": 4,
+          "category": "Possible"
+        },
+        "concordance_status": "Concordant",
+        "discrepancy_notes": "None.",
+        "review_status": "Reviewed",
+        "follow_up_status": "None"
+      }
+    },
+    {
+      "case_id": "FIC-2024-1011",
+      "provenance": "synthetic_control",
+      "clinical_profile": {
+        "report_type": "Health Professional",
+        "country": "Sweden",
+        "receive_date": "2024-08-09",
+        "report_date": "2024-08-09",
+        "patient": {
+          "initials": "UV",
+          "age": 27,
+          "sex": "Female",
+          "weight_kg": 58.0,
+          "height_cm": 168.0
+        },
+        "regimen": {
+          "suspect_drug": "Metoclopramide",
+          "details": "10 mg|Oral|Three times daily|Nausea|2024-08-05|2024-08-07|LOT84033|Drug withdrawn|Not performed",
+          "concomitant_drugs": "—"
+        },
+        "reactions": "Dystonia|Nervous system disorders|Severe|2024-08-07|1 day|Recovered",
+        "severity": {
+          "is_serious": "Yes",
+          "criteria": "Medically significant",
+          "overall_outcome": "Recovered"
+        },
+        "ground_truth_causality": "Probable",
+        "reporter": {
+          "type": "Physician",
+          "qualification": "Health Professional"
+        },
+        "narrative_summary": "27-year-old female took metoclopramide for nausea. After the sixth dose she developed oculogyric crisis and neck dystonia. Metoclopramide stopped and IV procyclidine given with full recovery in 3 hours.",
+        "lab_data": "CK 90 U/L; electrolytes normal; urine drug screen negative",
+        "dechallenge_status": "Positive (resolved after withdrawal and procyclidine)",
+        "alternative_causes": "Excluded",
+        "causality_rationale": "Known dopamine-antagonist effect; clear temporal link; positive dechallenge; no other drugs."
+      },
+      "ai_predicted_output": {
+        "adverse_event_pt": "Dystonia",
+        "predicted_causality": "Probable",
+        "primary_criterion": "Assessment completed against WHO-UMC criteria using the supplied temporal, dechallenge and alternative-cause data.",
+        "naranjo_metrics": {
+          "score": 7,
+          "category": "Probable"
+        },
+        "concordance_status": "Concordant",
+        "discrepancy_notes": "None.",
+        "review_status": "Reviewed",
+        "follow_up_status": "None"
+      }
+    }
+  ],
+  "provenance_note": "Cases FIC-2024-1001 to 1004 are the supplied records, unmodified. Cases FIC-2024-1006 to 1011 (provenance=synthetic_control) are authored single-drug controls with concordant model outputs; they were not captured from a live model run."
+}
